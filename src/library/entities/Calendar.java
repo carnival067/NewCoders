@@ -8,12 +8,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar sElF;
-	private static java.util.Calendar cAlEnDaR;
+	//private static Calendar sElF;
+	private static Calendar self;						// variable name changed from sElF to self
+	//private static java.util.Calendar cAlEnDaR
+	private static java.util.Calendar calendar;				//changed from cAlEnDaR to calendar
 	
 	
-	private Calendar() {
-		cAlEnDaR = java.util.Calendar.getInstance();
+		//cAlEnDaR = java.util.Calendar.getInstance();
+		calendar = java.util.Calendar.getInstance();			//changes from cAlEnDaR to calendar to comply with the variable name
+	
 	}
 	
 	public static Calendar gEtInStAnCe() {
