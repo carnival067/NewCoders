@@ -19,18 +19,23 @@ public class Calendar {
 	
 	}
 	
-	public static Calendar gEtInStAnCe() {
+	
+	// public static Calendar gEtInStAnCe()
+	public static Calendar getInstance() {.  				// Method name changed from gEtInStAnCe() to getInstance()
 		if (sElF == null) {
 			sElF = new Calendar();
 		}
 		return sElF;
 	}
 	
-	public void incrementDate(int days) {
-		cAlEnDaR.add(java.util.Calendar.DATE, days);		
+        // public void incrementDate(int days) {
+	public void isIncrementDate(int days) {					// Method name shoud be verb Phrase changed from incrementDate to isIncrementDate
+		// cAlEnDaR.add(java.util.Calendar.DATE, days);
+		calendar.add(java.util.Calendar.Date, days);			// Method name changed from cAlEnDaR , DATE to calendar and Date
 	}
 	
-	public synchronized void SeT_DaTe(Date DaTe) {
+		//public synchronized void SeT_DaTe(Date DaTe)
+		public synchronized void setDate(Date DaTe) {
 		try {
 			cAlEnDaR.setTime(DaTe);
 	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
@@ -42,7 +47,8 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date gEt_DaTe() {
+	// public synchronized Date gEt_DaTe()
+	public synchronized Date getDate() {
 		try {
 	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
 	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
@@ -54,16 +60,16 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-
-	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
+	// public synchronized Date gEt_DuE_DaTe(int loanPeriod)
+	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = gEt_DaTe();
 		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
 		Date dUeDaTe = cAlEnDaR.getTime();
 		cAlEnDaR.setTime(nOw);
 		return dUeDaTe;
 	}
-	
-	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
+	// public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate)
+	public synchronized long getDaysDifference(Date targetDate) {
 		
 		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
 	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
