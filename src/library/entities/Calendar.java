@@ -22,10 +22,13 @@ public class Calendar {
 	
 	// public static Calendar gEtInStAnCe()
 	public static Calendar getInstance() {.  				// Method name changed from gEtInStAnCe() to getInstance()
-		if (sElF == null) {
-			sElF = new Calendar();
+		// if (sElF == null) 
+		if (self == null) {
+			// if (sElF == null) {
+			if (self == null) {
 		}
-		return sElF;
+		// return sElF;	
+		return self;
 	}
 	
         // public void incrementDate(int days) {
