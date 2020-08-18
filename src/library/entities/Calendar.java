@@ -35,10 +35,10 @@ public class Calendar {
 	}
 	
 		//public synchronized void SeT_DaTe(Date DaTe)
-		public synchronized void setDate(Date DaTe) {
+		public synchronized void setDate(Date date) {
 		try {
 			// cAlEnDaR.setTime(DaTe);
-			calendar.setTime(DaTe);
+			calendar.setTime(Date);
 		// cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);	
 	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0); 
 		// cAlEnDaR.set(java.util.Calendar.MINUTE, 0); 
@@ -73,17 +73,18 @@ public class Calendar {
 	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = gEt_DaTe();
 		// cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
-		calendar.add(java.util.Calendar.DATE, loanPeriod);
+		calendar.add(java.util.Calendar.Date, loanPeriod);
 		Date dUeDaTe = cAlEnDaR.getTime();
 		// cAlEnDaR.setTime(nOw);
-		calendar.setTime(nOw);
+		calendar.setTime(now);
 		return dUeDaTe;
 	}
 	// public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate)
 	public synchronized long getDaysDifference(Date targetDate) {
 		
 		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
-	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
+	        // long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);		
+	        long Diff_Days = TimeUnit.DAYS.convert(diffMillis, timeUnit.MILLISECONDS);
 	    return Diff_Days;
 	}
 
